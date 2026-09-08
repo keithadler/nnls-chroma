@@ -170,7 +170,7 @@ if(EMSCRIPTEN)
   set_target_properties(chordino-wasm PROPERTIES OUTPUT_NAME "chordino" SUFFIX ".js"
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/wasm")
   target_link_options(chordino-wasm PRIVATE
-    -sMODULARIZE=1 -sEXPORT_NAME=createChordino -sENVIRONMENT=web,worker,node
+    -sMODULARIZE=1 -sEXPORT_ES6=1 -sEXPORT_NAME=createChordino -sENVIRONMENT=web,worker,node
     -sALLOW_MEMORY_GROWTH=1 -sFILESYSTEM=0
     "-sEXPORTED_FUNCTIONS=['_chordino_analyze_json','_chordino_free','_malloc','_free']"
     "-sEXPORTED_RUNTIME_METHODS=['cwrap','UTF8ToString','HEAPF32']")
